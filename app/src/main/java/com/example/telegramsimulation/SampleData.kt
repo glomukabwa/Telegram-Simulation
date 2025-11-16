@@ -7,11 +7,6 @@ object SampleData {
     // Sample conversation data
     val conversationSample = listOf(
         MessageContent(
-            "Lexi",
-            "Test...Test...Test...",
-            "Wed 30"
-        ),
-        MessageContent(
             "Anna",
             """List of Android versions:
             |Android KitKat (API 19)
@@ -23,18 +18,14 @@ object SampleData {
             |Android 10 (API 29)
             |Android 11 (API 30)
             |Android 12 (API 31)""".trim(),
-            "Nov 1"
-        ),
-        MessageContent(
-            "Fred",
-            """I think Kotlin is my favorite programming language.
-            |It's so much fun!""".trim(),
-            "Aug 20"
+            "Nov 1",
+            R.drawable.pony
         ),
         MessageContent(
             "Priscilla",
             "Searching for alternatives to XML layouts...",
-            "July 10"
+            "July 10",
+            R.drawable.queen
         ),
         MessageContent(
             "Tina",
@@ -42,47 +33,69 @@ object SampleData {
             |It's the Android's modern toolkit for building native UI.
             |It simplifies and accelerates UI development on Android.
             |Less code, powerful tools, and intuitive Kotlin APIs :)""".trim(),
-            "July 1"
+            "July 1",
+            R.drawable.pretty_girl
         ),
         MessageContent(
-            "Liz",
-            "It's available from API 21+ :)",
-            "June 28"
-        ),
-        MessageContent(
-            "Tabitha",
+            "Troy",
             "Writing Kotlin for UI seems so natural, Compose where have you been all my life?",
-            "June 12"
+            "June 12",
+            R.drawable.black_image
         ),
         MessageContent(
-            "Elena",
-            "Android Studio next version's name is Arctic Fox",
-            "June 10"
-        ),
-        MessageContent(
-            "Naomi",
-            "Android Studio Arctic Fox tooling for Compose is top notch ^_^",
-            "June 2"
+            "Luna",
+            "Android Studio Arctic Fox tools for Compose is top notch ^_^",
+            "June 2",
+            R.drawable.dog_cartoon
         ),
         MessageContent(
             "Rex",
             "I didn't know you can now run the emulator directly from Android Studio",
-            "May 31"
+            "May 31",
+            R.drawable.johnny_phantom
         ),
         MessageContent(
             "Lincoln",
             "Compose Previews are great to check quickly how a composable layout looks like",
-            "May 21"
-        ),
-        MessageContent(
-            "Tara",
-            "Previews are also interactive after enabling the experimental setting",
-            "May 17"
+            "May 21",
+            R.drawable.mouse
         ),
         MessageContent(
             "Tidashe",
+            "Previews are also interactive after enabling the experimental setting",
+            "May 17",
+            R.drawable.skeleton
+        ),
+        MessageContent(
+            "Tara",
             "Have you tried writing build.gradle with KTS?",
-            "May 14"
+            "May 14",
+            R.drawable.pink_panther
+        ),
+        MessageContent(
+            "Fred",
+            """I think Kotlin is my favorite programming language.
+            |It's so much fun!""".trim(),
+            "Aug 20",
+            R.drawable.black_image
+        ),
+        MessageContent(
+            "Elena",
+            "Android Studio next version's name is Arctic Fox",
+            "June 10",
+            R.drawable.girl
+        ),
+        MessageContent(
+            "Liz",
+            "It's available from API 21+ :)",
+            "June 28",
+            R.drawable.smileyface
+        ),
+        MessageContent(
+            "Lexi",
+            "Test...Test...Test...",
+            "Wed 30",
+            R.drawable.paw
         ),
     )
 }
