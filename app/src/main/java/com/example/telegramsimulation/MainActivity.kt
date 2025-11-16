@@ -5,12 +5,16 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -23,14 +27,18 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.telegramsimulation.ui.theme.TelegramSimulationTheme
+import java.sql.Date
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,7 +54,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-data class MessageContent(val author: String, val text: String)
+data class MessageContent(val author: String, val text: String, val date: String)
 
 @Composable
 fun OneMessage(msg: MessageContent){
@@ -57,16 +65,41 @@ fun OneMessage(msg: MessageContent){
             painter = painterResource(R.drawable.black_image),
             contentDescription = "Profile icon",
             modifier = Modifier
-                .size(50.dp)
+                .size(55.dp)
                 .clip(CircleShape)
         )
 
         Spacer(modifier = Modifier.width(15.dp))
 
         Column {
-            Text(text = msg.author)
-            Text(text = msg.text,
-                modifier = Modifier.padding(bottom = 10.dp))
+            Row (modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween /*This works the way the CSS one works and without the fillMaxWidth() above, you won't see the effect*/
+            ){
+                Text(
+                    text = msg.author,
+                    fontWeight = FontWeight.ExtraBold,
+                    fontSize = 20.sp
+                )
+                Text(
+                    text = msg.date,
+                    color = Color.DarkGray,
+                    fontSize = 14.sp
+                    )
+            }
+
+            Spacer(modifier = Modifier.height(5.dp))
+
+            Row (modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween){
+                Text(text = msg.text,
+                    modifier = Modifier.padding(bottom = 10.dp),
+                    color = MaterialTheme.colorScheme.primary,
+                    maxLines = 1,/*This means that it should only display one line of the text*/
+                    fontSize = 18.sp
+                )
+
+                MessageCount(1)
+            }
 
             Divider(color = Color.Gray, thickness = 0.5.dp)
             //A divider is just a thin line
@@ -90,12 +123,30 @@ fun OneMessage(msg: MessageContent){
     }
 }
 
+@Composable
+fun MessageCount(count : Int){
+    Box(
+        modifier = Modifier
+            .size(25.dp)
+            .background(Color(0xFF4CAF50),CircleShape),
+        contentAlignment = Alignment.Center
+
+
+    ){
+        Text(text = count.toString(),
+            color = Color.White,
+            fontSize = 14.sp,
+            fontWeight = FontWeight.Bold,
+        )
+    }
+}
+
 @Preview
 @Composable
 fun previewOneMessage(){
     TelegramSimulationTheme {
         Surface(modifier = Modifier.fillMaxSize()){
-            OneMessage(MessageContent("Gloria", "Hey Girllllll"))
+            OneMessage(MessageContent("Gloria", "Hey Girlll", "Sep 01"))
         }
     }
 }
