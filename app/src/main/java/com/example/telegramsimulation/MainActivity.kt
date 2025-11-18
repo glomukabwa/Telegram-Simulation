@@ -58,6 +58,7 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+
     }
 }
 
@@ -259,18 +260,38 @@ fun previewOneMessage(){
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun allMessages(messages: List<MessageContent>){
-    Column {
-        TelegramTopBar()
-        LazyColumn {
-            items(messages){message ->
+fun allMessages(messages: List<MessageContent>) {
+
+    Scaffold(
+        /* In Jetpack Compose, a Scaffold is a high-level layout structure that gives you a ready-made screen
+        layout following Material Design guidelines.
+        Think of it like a page template that already knows where to place:
+        Top app bar
+        Bottom app bar
+        Floating Action Button (FAB)
+        Drawer / Navigation Drawer
+        Snackbar host
+        Main content area (scrollable, etc.)
+        So instead of manually positioning everything (like I was doing now with Column + LazyColumn +
+        TelegramFABs()), Scaffold puts everything in the correct Material positions automatically.*/
+        topBar = { TelegramTopBar() },
+        floatingActionButton = { TelegramFABs() }
+    ) { paddingValues ->
+
+        LazyColumn(
+            modifier = Modifier
+                .padding(paddingValues)
+                .fillMaxSize()
+        ) {
+            items(messages) { message ->
                 OneMessage(message)
             }
         }
     }
-    TelegramFABs()
 }
+
 
 @Preview
 @Composable
