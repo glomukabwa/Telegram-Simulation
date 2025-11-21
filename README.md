@@ -7,7 +7,7 @@ This project is a UI simulation of the Telegram mobile application built using J
 - Jetpack Compose UI: Built fully in Compose with Row, Column, LazyColumn, Scaffold, and Material 3 components.
 - LazyColumn for List Rendering: The chat list is rendered using LazyColumn, which is the Compose equivalent of RecyclerView.
 - Top App Bar: Includes a menu bar,title and search bar 
-- Floating Action Buttons: Camera button (primary FAB), Pencil/edit button (secondary FAB)
+- Floating Action Buttons: Camera button, Pencil/edit button
 - Profile Photos: Each chat shows a different profile image passed through sample data.
 - Custom Message Layout: Chats include a profile picture, senders name, message preview, date, message counter, divider separator
 - Lightweight Sample Data: Sample chats are stored in a sample list using a MessageContent data class.
@@ -28,3 +28,4 @@ This project is a UI simulation of the Telegram mobile application built using J
 
 ## Demo Pictures
 - Here is a picture of the main page:<br><br> <img width="356" height="769" alt="image" src="https://github.com/user-attachments/assets/31a7ae06-b181-4085-b04c-703c1b964509" />
+
