@@ -358,7 +358,3 @@ fun previewMessages(){
     }
 }
 
-/*TO_DO:
-* Research on top bar and comment on it
-* Include change of color when clicking
-* Include shadow under pencil icon*/
