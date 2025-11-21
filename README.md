@@ -27,5 +27,6 @@ This project is a UI simulation of the Telegram mobile application built using J
 - Add Bottom Navigation: Simulate Telegram’s bottom navigation tabs (Chats, Contacts, Settings).
 
 ## Demo Pictures
-- Here is a picture of the main page:<br><br> <img width="356" height="769" alt="image" src="https://github.com/user-attachments/assets/31a7ae06-b181-4085-b04c-703c1b964509" />
+- Here is a picture of the current main page:<br><br> <img width="356" height="769" alt="image" src="https://github.com/user-attachments/assets/31a7ae06-b181-4085-b04c-703c1b964509" />
+
 
